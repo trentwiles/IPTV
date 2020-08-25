@@ -1,4 +1,6 @@
 <title>IPTV Search - Riverside Rocks</title>
+<br>
+<h1>IPTV Station Search</h1>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/siimple@3.3.1/dist/siimple.min.css"
@@ -25,12 +27,22 @@
 <form method="get"><input type="text" placeholder="Search.." name="q"><button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button></form>
 <?php
 
+/*
+
+Copyright 2020 Riverside Rocks (riverside.rocks or github.com/RiversideRocks)
+
+Under Apache 2.0 License
+
+*/
+
+
 $get = file_get_contents("https://iptv-org.github.io/iptv/channels.json");
 
 $json = json_decode($get, true);
 
 $y = 0;
 $x = 10000;
+$results = 0;
 
 while($x > $y){
     $link = $json[$y]["url"];
@@ -41,9 +53,14 @@ while($x > $y){
         if(strpos($channel, $_GET['q']) !== false){
             echo "<div style='width:30%;'><a href='${link}'><div class='siimple-box siimple-box--primary'><div class='siimple-box-title'>${channel}</div><div class='siimple-box-subtitle'>${logo}</div></div></a></div><br><br>";
             echo "<br>";
+            $results = $results + 1;
         }
     }else{
         die("Get started by searching for a channel.");
     }
     $y = $y + 1;
 }
+
+
+echo "Found ${results} stations.<br>";
+echo "<i>Data from https://iptv-org.github.io";
