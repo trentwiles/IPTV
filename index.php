@@ -63,4 +63,4 @@ while($x > $y){
 
 
 echo "Found ${results} stations.<br>";
-echo "<i>Data from https://iptv-org.github.io";
+echo "<i>Data from https://iptv-org.github.io</i>";
