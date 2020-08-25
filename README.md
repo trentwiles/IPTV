@@ -22,3 +22,6 @@ Open your browser to <a href="localhost/IPTV/" target="_blank">localhost/IPTV/</
 ## Watching the Stream
 
 Open <a href="https://www.videolan.org/vlc/">VLC</a> and click on the media tab. Click "Network Stream" and open the URL of the requested channel.
+
+
+*Data from https://iptv-org.github.io*
