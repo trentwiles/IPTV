@@ -1,3 +1,4 @@
+<center>
 <title>IPTV Search - Riverside Rocks</title>
 <br>
 <h1>IPTV Station Search</h1>
@@ -49,9 +50,10 @@ while($x > $y){
     $channel = $json[$y]["name"];
     $img = $json[$y]["logo"];
     $logo = "<img src='${img}' height='55px;' width='75px;' />";
+    $new = base64_encode($link);
     if(isset($_GET['q'])){
         if(strpos($channel, $_GET['q']) !== false){
-            echo "<div style='width:30%;'><a href='${link}'><div class='siimple-box siimple-box--primary'><div class='siimple-box-title'>${channel}</div><div class='siimple-box-subtitle'>${logo}</div></div></a></div><br><br>";
+            echo "<div style='width:30%;'><a href='/apps/view?id=${new}'><div class='siimple-box siimple-box--primary'><div class='siimple-box-title'>${channel}</div><div class='siimple-box-subtitle'>${logo}</div></div></a></div><br><br>";
             echo "<br>";
             $results = $results + 1;
         }
